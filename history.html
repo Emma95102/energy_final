@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>歷史紀錄 - 節能習慣追蹤器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>節能習慣追蹤器</h1>
+    <p class="subtitle">小習慣帶來大影響 — SDGs 7 / 11 / 13</p>
+    <nav>
+      <a href="home.html"><button>🏠 首頁</button></a>
+      <a href="behavior.html"><button>📋 行為表</button></a>
+      <a href="history.html"><button>📘 歷史紀錄</button></a>
+      <a href="medals.html"><button>🏅 獎牌紀錄</button></a>
+    </nav>
+
+    <!-- 上方固定走路小動畫（跟其他頁面一致） -->
+    <section class="card" id="fixed-animation">
+      <h3>本週進度與走路小動畫</h3>
+      <div id="track" class="track">
+        <div id="walker" class="walker">🚶‍♂️</div>
+      </div>
+      <div class="row small">
+        <div>今日得分：<span id="today-points">0</span> 點</div>
+        <div>進度：<span id="week-points-2">0</span>/<span id="weekly-goal-2"></span></div>
+      </div>
+      <div id="medal-note" class="small muted"></div>
+    </section>
+  </header>
+
+  <main class="page">
+    <section class="card">
+      <h2>歷史紀錄</h2>
+      <!-- 這裡由 history.js 負責渲染 -->
+      <div id="history-list"></div>
+
+      <!-- 原本的分頁按鈕（依你 history.js 的邏輯使用） -->
+      <div class="pager">
+        <button id="prev-page">上一頁</button>
+        <span id="page-info"></span>
+        <button id="next-page">下一頁</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- 只需要前端邏輯，不用 Firebase -->
+  <script src="main.js"></script>
+  <script src="history.js"></script>
+</body>
+</html>

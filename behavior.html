@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>行為表 - 節能習慣追蹤器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>節能習慣追蹤器</h1>
+    <p class="subtitle">小習慣帶來大影響 — SDGs 7 / 11 / 13</p>
+    <nav>
+      <a href="home.html"><button>🏠 首頁</button></a>
+      <a href="behavior.html"><button>📋 行為表</button></a>
+      <a href="history.html"><button>📘 歷史紀錄</button></a>
+      <a href="medals.html"><button>🏅 獎牌紀錄</button></a>
+    </nav>
+
+    <section class="card" id="fixed-animation">
+      <h3>本週進度與走路小動畫</h3>
+      <div id="track" class="track">
+        <div id="walker" class="walker">🚶‍♂️</div>
+      </div>
+      <div class="row small">
+        <div>今日得分：<span id="today-points">0</span> 點</div>
+        <div>進度：<span id="week-points-2">0</span>/<span id="weekly-goal-2"></span></div>
+      </div>
+      <div id="medal-note" class="small muted"></div>
+    </section>
+  </header>
+
+  <main id="page-home" class="page">
+    <section class="card">
+      <div class="row">
+        <div><strong>本週上限：</strong><span id="weekly-goal-label"></span> 點</div>
+        <div><strong>本週累積：</strong><span id="week-points">0</span> 點</div>
+      </div>
+
+      <h2>今天的節能行為</h2>
+      <div id="task-list" class="task-list"></div>
+
+      <label for="note">今日備註（選填）</label>
+      <textarea id="note" placeholder="寫下今天的小習慣或心得..."></textarea>
+
+      <div class="controls">
+        <button id="save-btn">儲存今天的紀錄</button>
+      </div>
+
+      <audio id="save-sound" src="audio/high-tech-bleep.mp3" type="audio/mp3"></audio>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>每週從週一 00:00 為新週；一週達標將自動領取獎牌。</small>
+  </footer>
+
+
+  <!-- 1️⃣ Firebase 初始化（只執行一次） -->
+  <script type="module" src="firebase.js"></script>
+
+  <!-- 2️⃣ 一般前端邏輯（非 module） -->
+  <script src="main.js"></script>
+
+  <!-- 3️⃣ 行為表邏輯（module，會 import Firestore） -->
+  <script type="module" src="behavior.js"></script>
+
+</body>
+</html>
