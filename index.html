@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>登入 - 節能習慣追蹤器</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="page">
+    <section class="card" style="max-width:400px;margin:50px auto;text-align:center;">
+      <h1>節能習慣追蹤器</h1>
+      <p class="subtitle">輸入使用者名稱</p>
+
+      <input
+        type="text"
+        id="username"
+        placeholder="例如：小明、Emma、翊皓..."
+        style="width:100%;padding:8px;margin:8px 0;border-radius:6px;border:1px solid #ddd"
+      >
+
+      <button id="login-btn" style="
+          padding:10px 20px;
+          font-size:16px;
+          border-radius:6px;
+          background:#2b8a3e;
+          color:#fff;
+          border:none;
+          cursor:pointer;">
+        開始使用
+      </button>
+    </section>
+  </main>
+
+  <!-- 先載入 Firebase 設定（提供 window.firebaseDB / window.firestore） -->
+  <script type="module" src="firebase.js"></script>
+
+  <!-- 登入邏輯 -->
+  <script type="module" src="login.js"></script>   ✔
+
+</body>
+</html>
